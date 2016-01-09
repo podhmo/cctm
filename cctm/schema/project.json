@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://raw.githubusercontent.com/podhmo/cctm/cctm/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "id": "https://raw.githubusercontent.com/podhmo/cctm/cctm/schema/name",
+      "type": "string"
+    },
+    "url": {
+      "id": "https://raw.githubusercontent.com/podhmo/cctm/cctm/schema/url",
+      "type": "string"
+    },
+    "description": {
+      "id": "https://raw.githubusercontent.com/podhmo/cctm/cctm/schema/description",
+      "type": "string"
+    },
+    "created_at": {
+      "id": "https://raw.githubusercontent.com/podhmo/cctm/cctm/schema/created_at",
+      "type": "string"
+    },
+    "updated_at": {
+      "id": "https://raw.githubusercontent.com/podhmo/cctm/cctm/schema/updated_at",
+      "type": "string"
+    },
+    "star": {
+      "id": "https://raw.githubusercontent.com/podhmo/cctm/cctm/schema/star",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "name",
+    "url",
+    "description",
+    "created_at",
+    "updated_at"
+  ]
+}
