@@ -16,7 +16,10 @@ except IOError:
 
 
 install_requires = [
-    'setuptools',
+    'dictremapper',
+    'handofcats',
+    'miniconfig',
+    'cached_property'
 ]
 
 
@@ -53,5 +56,7 @@ setup(name='cctm',
       test_suite="cctm.tests",
       license="mit",
       entry_points="""
+[console_scripts]
+cctm = cctm.commands:main
 """)
 
