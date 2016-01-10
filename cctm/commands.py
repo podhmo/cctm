@@ -2,6 +2,7 @@
 import logging
 from cctm import get_configurator
 from cctm import services
+from cctm import json
 logger = logging.getLogger(__name__)
 
 
@@ -21,6 +22,13 @@ def init(config):
     config.init_config()
 
 
+def show(config, name):
+    config.load_config()
+    store = services.PackagesStore(config)
+    data = store.lookup_loose(name) or "not found."
+    print(json.dumps(data))
+
+
 def selfupdate(config):
     config.load_config()
     logger.info("selfupdate")
@@ -36,6 +44,7 @@ def main(argv=None):
     config.add_directive("register_command", register_command)
 
     config.register_command("init", init)
+    config.register_command("show", show)
     config.register_command("selfupdate", selfupdate)
     config.include("cctm.management.fetching")
     config.include("cctm.management.merging")

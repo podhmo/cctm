@@ -11,6 +11,7 @@ commands
 ----------------------------------------
 
 - init
+- show
 - list
 - selfupdate
 - management fetch
