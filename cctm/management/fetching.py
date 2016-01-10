@@ -1,8 +1,10 @@
 # -*- coding:utf-8 -*-
 import requests
+import logging
 from dictremapper import Remapper, Path
 from cctm import services
 from cctm import json
+logger = logging.getLogger(__name__)
 
 
 def get_fullname(repository):
@@ -40,7 +42,11 @@ class GithubSummaryRemapper(Remapper):
 
 def main(config, repository, show_all=False, save=False, store=None):
     full_name = get_fullname(repository)
-    data = requests.get(Namespace(full_name).summary_url).json()
+    url = Namespace(full_name).summary_url
+    logger.info("fetching url=%s", url)
+    # TODO: auth
+    data = requests.get(url).json()
+
     if not show_all:
         remapper = GithubSummaryRemapper()
         data = remapper(data)
