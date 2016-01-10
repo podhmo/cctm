@@ -26,7 +26,7 @@ class CCTMControl(Control):
 
     @reify
     def config_path(self):
-        return self.resolve_path("config.json")
+        return self.resolve_path("cctm.json")
 
     @reify
     def store_path(self):
