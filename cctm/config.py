@@ -31,6 +31,10 @@ class CCTMControl(Control):
         return self.resolve_path("cctm.json")
 
     @reify
+    def alias_path(self):
+        return self.resolve_path("alias.json")
+
+    @reify
     def store_path(self):
         return self.resolve_path("store.json")
 
@@ -41,6 +45,10 @@ class CCTMControl(Control):
     @reify
     def repositories(self):
         return self.settings.get("repositories") or []
+
+    @reify
+    def aliases(self):
+        return self.settings.get("aliases") or []
 
 
 class Configurator(ConfiguratorCore):

@@ -7,10 +7,10 @@ from .resolver import Resolver
 logger = logging.getLogger(__name__)
 
 
-class PackagesStore(object):
-    def __init__(self, config, path=None):
+class FileStore(object):
+    def __init__(self, config, path):
         self.config = config
-        self.path = path or self.config.store_path
+        self.path = path
 
     def load(self):
         try:
@@ -39,9 +39,6 @@ class RepositoriesStore(object):
         self.config = config
         self.resolver = Resolver(self.config)
 
-    def load(self):
-        return self.config.repositories
-
     def extract_packages(self, repositories=None):
         repositories = repositories or self.load()
         d = OrderedDict()
@@ -52,3 +49,11 @@ class RepositoriesStore(object):
             for data in asset.json():
                 d[data["name"]] = data
         return list(d.values())
+
+
+def packages_store(config, path=None):
+    return FileStore(config, path=path or config.store_path)
+
+
+def aliases_store(config, path=None):
+    return FileStore(config, path=path or config.alias_path)

@@ -1,0 +1,10 @@
+[
+  {
+    "name": "pylibrary",
+    "link": "ionelmc/cookiecutter-pylibrary"
+  },
+  {
+    "name": "pypackage",
+    "link": "audreyr/cookiecutter-pypackage"
+  }
+]

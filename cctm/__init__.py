@@ -36,8 +36,10 @@ def init(config, project=None):
             "base_path": config.base_path,
             "template_dir": config.template_dir,
             "repositories": [
-                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.simple.json"
-                # "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
+                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
+            ],
+            "aliases": [
+                "https://raw.githubusercontent.com/podhmo/cctm/master/data/alias.json"
             ]
         }
         logger.info("initialize. generating %s", os.path.abspath(config.config_path))
@@ -78,9 +80,11 @@ def selfupdate(config):
     config.load_config()
     logger.info("selfupdate")
     logger.info("updating store=%s", config.store_path)
-    package_store = services.PackagesStore(config)
+    package_store = services.packages_store(config)
+    alias_store = services.aliases_store(config)
     repository_store = services.RepositoriesStore(config)
-    package_store.save(repository_store.extract_packages())
+    package_store.save(repository_store.extract_packages(config.repositories))
+    alias_store.save(repository_store.extract_packages(config.aliases))
 
 
 def main(argv=None):

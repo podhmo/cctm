@@ -9,7 +9,7 @@ def main(config, installed=False):
         for path in safe_listdir(config.template_dir):
             print(path.replace(".", "/", 1))
     else:
-        store = services.PackagesStore(config)
+        store = services.packages_store(config)
 
         def gen():
             for data in store.load():

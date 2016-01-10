@@ -2,7 +2,7 @@
 import os.path
 from cached_property import cached_property as reify
 from cctm.path import safe_listdir
-from . import PackagesStore
+from . import packages_store
 
 
 def normalize(name):
@@ -38,7 +38,7 @@ class PackageLookup(object):
 
     @reify
     def store(self):
-        return PackagesStore(self.config)
+        return packages_store(self.config)
 
     def load(self):
         return self.store.load()

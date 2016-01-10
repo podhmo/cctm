@@ -55,7 +55,7 @@ def main(config, repository, show_all=False, save=False, store=None):
     if not save:
         print(json.dumps(data))
     else:
-        store = services.PackagesStore(config, path=store)
+        store = services.packages_store(config, path=store)
         store_data = store.update(data, store.load())
         store.save(store_data)
 
