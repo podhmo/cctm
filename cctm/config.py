@@ -12,12 +12,13 @@ logger = logging.getLogger(__name__)
 class CCTMControl(Control):
     DEFAULT_BASE_PATH = "~/.cctm/"
 
+    def resolve_path(self, target_file):
+        path = pickup_file(self.current_path, target_file) or os.path.join(self.base_path, target_file)
+        return os.path.abspath(path)
+
     @reify
     def base_path(self):
         return os.path.expanduser(self.settings.get("base_path", self.DEFAULT_BASE_PATH))
-
-    def resolve_path(self, target_file):
-        return pickup_file(self.current_path, target_file) or os.path.join(self.base_path, target_file)
 
     @reify
     def current_path(self):
@@ -46,6 +47,9 @@ class Configurator(ConfiguratorCore):
         control = control or CCTMControl(settings)
         super(Configurator, self).__init__(settings, module, control)
 
+    def set_value(self, k, v):
+        setattr(self.control, k, v)
+
 
 def load_config(config, path=None):
     path = path or config.config_path
@@ -61,22 +65,9 @@ def load_config(config, path=None):
 def save_config(config, settings, path=None):
     path = path or config.config_path
     with safe_open(path, "w") as wf:
-        json.dump(settings, wf, indent=2, ensure_ascii=False)
-
-
-def init_config(config, path=None):
-    path = path or config.config_path
-    default_config = {
-        "base_path": config.base_path,
-        "template_dir": config.template_dir,
-        "repositories": [
-            "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
-        ]
-    }
-    config.save_config(default_config, path=path)
+        json.dump(settings, wf)
 
 
 def includeme(config):
     config.add_directive("load_config", load_config)
     config.add_directive("save_config", save_config)
-    config.add_directive("init_config", init_config)

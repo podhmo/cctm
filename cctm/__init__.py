@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import logging
+import os.path
 from cctm import services
 from cctm import json
 from cctm.config import Configurator
@@ -25,9 +26,21 @@ def register_command(config, name, fn):
     config.add_subcommand(name, parser)
 
 
-def init(config):
-    logger.info("initialize")
-    config.init_config()
+def init(config, project=None):
+    if project:
+        config.set_value("base_path", project)
+    if os.path.exists(config.config_path):
+        print("already exists. {}".format(config.config_path))
+    else:
+        default_config = {
+            "base_path": config.base_path,
+            "template_dir": config.template_dir,
+            "repositories": [
+                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
+            ]
+        }
+        logger.info("initialize. generating %s", os.path.abspath(config.config_path))
+        config.save_config(default_config, config.config_path)
 
 
 def show(config, name):
