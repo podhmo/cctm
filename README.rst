@@ -41,12 +41,10 @@ first, from current working directory, searching "cctm.json" file, recuresively.
 
 e.g. if cwd is `~/foo/bar/boo`. searching below paths.
 
-```
-~/foo/bar/boo/cctm.json
-~/foo/bar/cctm.json
-~/foo/cctm.json
-~/cctm.json
-```
+#. ~/foo/bar/boo/cctm.json
+#. ~/foo/bar/cctm.json
+#. ~/foo/cctm.json
+#. ~/cctm.json
 
 second, if cctm.json is not found on first process, then, using `~/.cctm/cctm.json` (default path)
 
