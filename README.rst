@@ -76,6 +76,7 @@ show detail via `cctm show`
 
 .. code-block:: bash
 
+  $ cctm show audreyr/cookiecutter-pypackage
   {
     "updated_at": "2016-01-08T22:53:23Z",
     "url": "https://github.com/audreyr/cookiecutter-pypackage",
