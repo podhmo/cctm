@@ -3,7 +3,7 @@ cctm
 
 CCTM = cookie cutter template manager
 
-project templates manager for [cookiecutter](https://github.com/audreyr/cookiecutter)
+project templates manager for `cookiecutter <https://github.com/audreyr/cookiecutter>`_
 
 (python3 only)
 
