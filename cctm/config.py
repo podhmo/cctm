@@ -2,7 +2,8 @@
 import json
 import os.path
 import logging
-from miniconfig import ConfiguratorCore, Control
+from miniconfig_argparse import Configurator as ConfiguratorCore
+from miniconfig_argparse import ParserTreeControl as Control
 from cached_property import cached_property as reify
 from .path import pickup_file, safe_open
 logger = logging.getLogger(__name__)
@@ -29,10 +30,9 @@ class CCTMControl(Control):
 
 class Configurator(ConfiguratorCore):
     def __init__(self, settings=None, module=None, control=None):
-        control = control or CCTMControl()
+        settings = settings or {}
+        control = control or CCTMControl(settings)
         super(Configurator, self).__init__(settings, module, control)
-        control.settings = self.settings  # xxx
-        includeme(self)
 
 
 def load_config(config, path=None):
@@ -53,7 +53,9 @@ def save_config(config, settings, path=None):
 
 def init_config(config, path=None):
     path = path or config.config_path
-    default_config = {}
+    default_config = {
+        "base_path": config.base_path
+    }
     config.save_config(default_config, path=path)
 
 

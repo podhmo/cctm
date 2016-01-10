@@ -19,7 +19,9 @@ install_requires = [
     'dictremapper',
     'handofcats',
     'miniconfig',
-    'cached_property'
+    'miniconfig-argparse',
+    'cached_property',
+    'requests'
 ]
 
 

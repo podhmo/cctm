@@ -1,8 +1,12 @@
 # -*- coding:utf-8 -*-
 import logging
 logger = logging.getLogger(__name__)
-from cctm.configurator import Configurator
+from cctm.config import Configurator
 
 
 def get_configurator():
-    return Configurator()
+    config = Configurator()
+    config.include("cctm.config")
+    config.include("miniconfig_argparse")
+    config.include("miniconfig_argparse.parsertree")
+    return config

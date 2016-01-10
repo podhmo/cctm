@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 import json
 import requests
-from handofcats import as_command
 from dictremapper import Remapper, Path
 
 
@@ -38,11 +37,14 @@ class GithubSummaryRemapper(Remapper):
     star = Path("stargazers_count")
 
 
-@as_command
-def main(repository, show_all=False):
+def main(config, repository, show_all=False):
     full_name = get_fullname(repository)
     data = requests.get(Namespace(full_name).summary_url).json()
     if not show_all:
         remapper = GithubSummaryRemapper()
         data = remapper(data)
     print(json.dumps(data, indent=2))
+
+
+def includeme(config):
+    config.register_command("management.fetch", main)
