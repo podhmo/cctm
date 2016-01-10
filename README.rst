@@ -121,6 +121,34 @@ if you are irritated by long-long-name, `cctm management alias` is helpful, mayb
   mywagtail -> chrisdev/wagtail-cookiecutter-foundation
   $ cctm use mywagtail  # it's is also ok.
 
+default configuration settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+if you want to set a default context, using `cctm config`
+
+.. code-block:: bash
+
+  # show configuration
+  $ cctm config | jq .extra_context
+  {
+    "name": "podhmo",
+  }
+  # edit configuration
+  $ cctm config --name=project_name --value=hello
+  $ delete configuration
+  $ cctm config --name=project_name
+
+extra_context attribute in config file is using as cookiecutter's extra context, so.
+
+.. code-block:: bash
+
+  $ cctm use mywagtail
+  project_name [Wagtail Project]:  # cancel
+
+  $ cctm config --name=project_name --value=hello
+  $ cctm use mywagtail
+  project_name [hello]:
+
 your custom repositories
 ----------------------------------------
 
