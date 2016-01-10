@@ -19,11 +19,11 @@ class InstalledPackageLookup(object):
 
     def load(self):
         r = []
-        for path in safe_listdir(self.config.template_dir):
+        for path in safe_listdir(self.config.store_dir):
             basename = path.replace(".", "/")
             r.append({
                 "name": basename,
-                "path": os.path.join(self.config.template_dir, path)
+                "path": os.path.join(self.config.store_dir, path)
             })
         return r
 

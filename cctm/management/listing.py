@@ -7,7 +7,7 @@ from cctm.path import safe_listdir
 def main(config, installed=False, alias=False):
     config.load_config()
     if installed:
-        for path in safe_listdir(config.template_dir):
+        for path in safe_listdir(config.store_dir):
             print(path.replace(".", "/", 1))
     elif alias:
         store = services.aliases_store(config)

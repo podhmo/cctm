@@ -39,8 +39,8 @@ class CCTMControl(Control):
         return self.resolve_path("store.packages.json")
 
     @reify
-    def template_dir(self):
-        return self.resolve_path("templates")
+    def store_dir(self):
+        return self.resolve_path("store")
 
     @reify
     def repositories(self):

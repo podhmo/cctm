@@ -34,7 +34,7 @@ def init(config, project=None):
     else:
         default_config = {
             "base_path": config.base_path,
-            "template_dir": config.template_dir,
+            "store_dir": config.store_dir,
             "repositories": [
                 "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json",
                 "file://{}".format(os.path.join(config.base_path, "local.repository.json"))

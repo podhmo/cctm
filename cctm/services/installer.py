@@ -11,7 +11,7 @@ class TemplateInstaller(object):
 
     def install(self, data, upgrade=False, tag=None):
         logger.info("install {data[name]}".format(data=data))
-        outdir = os.path.join(self.config.template_dir, data["name"].replace("/", "."))
+        outdir = os.path.join(self.config.store_dir, data["name"].replace("/", "."))
         if tag is not None:
             outdir = "{}@{}".format(outdir, tag)
 
