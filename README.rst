@@ -11,6 +11,7 @@ project templates manager for `cookiecutter <https://github.com/audreyr/cookiecu
 .. code-block:: bash
 
   $ cctm init
+  $ cctm selfupate
   $ cctm list | grep python
   $ cctm install flyondrag/cookiecutter-python
   $ cctm use flyondrag/cookiecutter-python
