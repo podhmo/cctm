@@ -18,7 +18,7 @@ def pickup_file(src, target_file):
 @contextlib.contextmanager
 def safe_open(path, *args, **kwargs):
     dirpath = os.path.dirname(path)
-    if not os.path.exists(dirpath):
+    if dirpath and not os.path.exists(dirpath):
         os.makedirs(dirpath)
 
     with open(path, *args, **kwargs) as ref:

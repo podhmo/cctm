@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
-import json
 import requests
 from dictremapper import Remapper, Path
+from cctm import services
+from cctm import json
 
 
 def get_fullname(repository):
@@ -37,13 +38,19 @@ class GithubSummaryRemapper(Remapper):
     star = Path("stargazers_count")
 
 
-def main(config, repository, show_all=False):
+def main(config, repository, show_all=False, save=False, store=None):
     full_name = get_fullname(repository)
     data = requests.get(Namespace(full_name).summary_url).json()
     if not show_all:
         remapper = GithubSummaryRemapper()
         data = remapper(data)
-    print(json.dumps(data, indent=2))
+
+    if not save:
+        print(json.dumps(data))
+    else:
+        store = services.PackagesStore(config, path=store)
+        store_data = store.update(data, store.load())
+        store.save(store_data)
 
 
 def includeme(config):

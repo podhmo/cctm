@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-import json
+from cctm import json
 import os.path
 import logging
 from miniconfig_argparse import Configurator as ConfiguratorCore
@@ -16,6 +16,9 @@ class CCTMControl(Control):
     def base_path(self):
         return os.path.expanduser(self.settings.get("base_path", self.DEFAULT_BASE_PATH))
 
+    def resolve_path(self, target_file):
+        return pickup_file(self.current_path, target_file) or os.path.join(self.base_path, target_file)
+
     @reify
     def current_path(self):
         return self.settings.get("current_path") or os.getcwd()
@@ -24,8 +27,13 @@ class CCTMControl(Control):
     def config_path(self):
         return self.resolve_path("config.json")
 
-    def resolve_path(self, target_file):
-        return pickup_file(self.current_path, target_file) or os.path.join(self.base_path, target_file)
+    @reify
+    def store_path(self):
+        return self.resolve_path("store.json")
+
+    @reify
+    def repositories(self):
+        return self.settings.get("repositories") or []
 
 
 class Configurator(ConfiguratorCore):
@@ -54,7 +62,8 @@ def save_config(config, settings, path=None):
 def init_config(config, path=None):
     path = path or config.config_path
     default_config = {
-        "base_path": config.base_path
+        "base_path": config.base_path,
+        "repositories": []
     }
     config.save_config(default_config, path=path)
 
