@@ -22,6 +22,9 @@ quick examples
  $ cctm management alias audreyr/cookiecutter-pypackage pypackage
  $ cctm use pypackage
 
+ # extra_context configuration
+ $ cctm config --name=full_name --value=podhmo.podhmo
+ $ cctm use pypackage
 
 setup
 ----------------------------------------
