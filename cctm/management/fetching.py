@@ -1,57 +1,28 @@
 # -*- coding:utf-8 -*-
 import requests
 import logging
-from dictremapper import Remapper, Path
 from cctm import services
 from cctm import json
+from cctm import github
 logger = logging.getLogger(__name__)
 
 
-def get_fullname(repository):
-    if "://" in repository:
-        url = repository
-        return "/".join(url.rstrip("/").split("/")[-2:])
-    return repository
-
-
-class Namespace(object):
-    baseurl = "https://api.github.com"
-
-    def __init__(self, fullname):
-        self.fullname = fullname  # fullname is ":owner/:name"
-
-    @property
-    def versions_url(self):
-        urlfmt = "{self.baseurl}/repos/{self.fullname}/tags"
-        return urlfmt.format(self=self)
-
-    @property
-    def summary_url(self):
-        urlfmt = "{self.baseurl}/repos/{self.fullname}"
-        return urlfmt.format(self=self)
-
-
-class GithubSummaryRemapper(Remapper):
-    name = Path("full_name")
-    url = Path("html_url")
-    description = Path("description")
-    created_at = Path("created_at")
-    updated_at = Path("updated_at")
-    star = Path("stargazers_count")
-
-
-def main(config, repository, show_all=False, save=False, store=None):
-    config.load_config()
-    full_name = get_fullname(repository)
-    url = Namespace(full_name).summary_url
+def fetch(repository, show_all):
+    full_name = github.get_fullname(repository)
+    url = github.Namespace(full_name).summary_url
     logger.info("fetching url=%s", url)
     # TODO: auth
     data = requests.get(url).json()
 
     if not show_all:
-        remapper = GithubSummaryRemapper()
+        remapper = github.SummaryRemapper()
         data = remapper(data)
+    return data
 
+
+def main(config, repository, show_all=False, save=False, store=None):
+    config.load_config()
+    data = fetch(repository, show_all=show_all)
     if not save:
         print(json.dumps(data))
     else:
