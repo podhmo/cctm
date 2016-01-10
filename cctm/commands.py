@@ -29,7 +29,7 @@ def show(config, name):
     print(json.dumps(data))
 
 
-def install(config, name):
+def install(config, name, upgrade=False):
     config.load_config()
     lookup = services.PackageLookup(config)
     data = lookup.lookup_loose(name)
@@ -37,7 +37,7 @@ def install(config, name):
         print("not found: {}".format(name))
     else:
         installer = services.TemplateInstaller(config)
-        installer.install(data)
+        installer.install(data, upgrade=upgrade)
 
 
 def use(config, name, retry=True):

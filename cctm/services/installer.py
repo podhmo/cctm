@@ -9,8 +9,15 @@ class TemplateInstaller(object):
     def __init__(self, config):
         self.config = config
 
-    def install(self, data):
+    def install(self, data, upgrade=False):
         logger.info("install {data[name]}".format(data=data))
         outdir = os.path.join(self.config.template_dir, data["name"].replace("/", "."))
         if not os.path.exists(outdir):
             subprocess.call(["git", "clone", "--depth=1", data["url"], outdir])
+        elif upgrade:
+            subprocess.call("""
+            cd {path};
+            git pull
+            """.format(path=outdir), shell=True)
+        else:
+            print("already installed. ({path})".format(path=outdir))
