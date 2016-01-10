@@ -1,0 +1,434 @@
+[
+  {
+    "name": "chrisdev/wagtail-cookiecutter-foundation",
+    "url": "https://github.com/chrisdev/wagtail-cookiecutter-foundation",
+    "description": "Cookiecutter template for Wagtail CMS using Zurb Foundation 5",
+    "created_at": "2015-04-13T13:36:50Z",
+    "updated_at": "2016-01-04T14:53:04Z",
+    "star": 23
+  },
+  {
+    "name": "foosel/OctoPrint",
+    "star": 1144,
+    "updated_at": "2016-01-09T15:37:18Z",
+    "created_at": "2012-12-31T12:20:57Z",
+    "url": "https://github.com/foosel/OctoPrint",
+    "description": "OctoPrint provides a snappy web interface for controlling a 3D printer (RepRap, Ultimaker, ...)."
+  },
+  {
+    "name": "OctoPrint/cookiecutter-octoprint-plugin",
+    "star": 1,
+    "updated_at": "2015-10-20T11:47:57Z",
+    "created_at": "2015-05-12T18:54:04Z",
+    "url": "https://github.com/OctoPrint/cookiecutter-octoprint-plugin",
+    "description": "Cookiecutter template for creating OctoPrint plugins."
+  },
+  {
+    "name": "torchbox/wagtail",
+    "star": 3177,
+    "updated_at": "2016-01-09T19:06:09Z",
+    "created_at": "2014-02-03T12:41:59Z",
+    "url": "https://github.com/torchbox/wagtail",
+    "description": "A Django content management system focused on flexibility and user experience"
+  },
+  {
+    "name": "torchbox/cookiecutter-wagtail",
+    "star": 22,
+    "updated_at": "2015-12-28T13:35:29Z",
+    "created_at": "2015-03-04T14:22:24Z",
+    "url": "https://github.com/torchbox/cookiecutter-wagtail",
+    "description": ""
+  },
+  {
+    "name": "drgarcia1986/cookiecutter-muffin",
+    "star": 0,
+    "updated_at": "2015-08-10T02:07:05Z",
+    "created_at": "2015-08-10T02:04:51Z",
+    "url": "https://github.com/drgarcia1986/cookiecutter-muffin",
+    "description": "A cookiecutter template for Muffin Framework"
+  },
+  {
+    "name": "kkujawinski/cookiecutter-sublime-text-3-plugin",
+    "star": 3,
+    "updated_at": "2015-11-03T15:02:28Z",
+    "created_at": "2015-08-15T09:04:36Z",
+    "url": "https://github.com/kkujawinski/cookiecutter-sublime-text-3-plugin",
+    "description": "Cookie cutter for Sublime Text 3 plugin"
+  },
+  {
+    "name": "vintasoftware/tapioca-wrapper",
+    "star": 79,
+    "updated_at": "2015-12-31T00:21:24Z",
+    "created_at": "2015-01-29T17:29:22Z",
+    "url": "https://github.com/vintasoftware/tapioca-wrapper",
+    "description": "Tapioca API wrapper"
+  },
+  {
+    "name": "vintasoftware/cookiecutter-tapioca",
+    "star": 12,
+    "updated_at": "2015-12-11T15:27:09Z",
+    "created_at": "2015-08-09T13:40:29Z",
+    "url": "https://github.com/vintasoftware/cookiecutter-tapioca",
+    "description": "A cookiecutter template for new tapioca wrappers"
+  },
+  {
+    "name": "pytest-dev/cookiecutter-pytest-plugin",
+    "star": 18,
+    "updated_at": "2015-12-07T16:06:52Z",
+    "created_at": "2015-07-25T09:33:02Z",
+    "url": "https://github.com/pytest-dev/cookiecutter-pytest-plugin",
+    "description": "A Cookiecutter to create pytest plugins with ease."
+  },
+  {
+    "name": "luismartingil/cookiecutter-beamer",
+    "star": 1,
+    "updated_at": "2015-03-08T07:15:11Z",
+    "created_at": "2014-11-04T16:12:41Z",
+    "url": "https://github.com/luismartingil/cookiecutter-beamer",
+    "description": "A cookiecutter template for a beamer presentation"
+  },
+  {
+    "name": "fulfilio/cookiecutter-tryton",
+    "star": 0,
+    "updated_at": "2015-07-02T09:46:48Z",
+    "created_at": "2015-07-02T09:41:37Z",
+    "url": "https://github.com/fulfilio/cookiecutter-tryton",
+    "description": "Boilerplate for tryton modules"
+  },
+  {
+    "name": "jpadilla/cookiecutter-django-rest-framework",
+    "star": 55,
+    "updated_at": "2015-12-02T18:17:16Z",
+    "created_at": "2014-11-17T12:07:11Z",
+    "url": "https://github.com/jpadilla/cookiecutter-django-rest-framework",
+    "description": "A cookiecutter template for creating reusable Django REST Framework packages quickly."
+  },
+  {
+    "name": "pybee/Python-Android-template",
+    "star": 38,
+    "updated_at": "2016-01-05T20:18:20Z",
+    "created_at": "2014-08-24T07:48:09Z",
+    "url": "https://github.com/pybee/Python-Android-template",
+    "description": "A cookiecutter template for creating an Android project running Python code."
+  },
+  {
+    "name": "pybee/Python-iOS-template",
+    "star": 112,
+    "updated_at": "2016-01-09T08:23:55Z",
+    "created_at": "2014-08-01T21:54:31Z",
+    "url": "https://github.com/pybee/Python-iOS-template",
+    "description": "A cookiecutter template for creating an iOS project running Python code."
+  },
+  {
+    "name": "robinandeer/cookiecutter-pyvanguard",
+    "star": 30,
+    "updated_at": "2016-01-04T21:50:17Z",
+    "created_at": "2014-07-08T11:51:00Z",
+    "url": "https://github.com/robinandeer/cookiecutter-pyvanguard",
+    "description": "Bleeding edge Cookiecutter template for Python development"
+  },
+  {
+    "name": "ionelmc/cookiecutter-pylibrary",
+    "star": 137,
+    "updated_at": "2016-01-09T03:12:56Z",
+    "created_at": "2014-05-28T14:14:29Z",
+    "url": "https://github.com/ionelmc/cookiecutter-pylibrary",
+    "description": "Enhanced cookiecutter template for Python libraries."
+  },
+  {
+    "name": "relekang/cookiecutter-tumblr-theme",
+    "star": 1,
+    "updated_at": "2014-02-02T17:05:42Z",
+    "created_at": "2014-01-29T19:00:29Z",
+    "url": "https://github.com/relekang/cookiecutter-tumblr-theme",
+    "description": "A cookiecutter template for creating tumblr themes with gruntjs"
+  },
+  {
+    "name": "solarnz/cookiecutter-avr",
+    "star": 1,
+    "updated_at": "2015-12-10T18:43:01Z",
+    "created_at": "2014-02-15T00:46:33Z",
+    "url": "https://github.com/solarnz/cookiecutter-avr",
+    "description": "Cookiecutter template for avr development (targets the ATmega32u4 by default)"
+  },
+  {
+    "name": "mahmoudimus/cookiecutter-slim-berkshelf-vagrant",
+    "star": 0,
+    "updated_at": "2013-11-10T12:08:14Z",
+    "created_at": "2013-11-10T11:50:03Z",
+    "url": "https://github.com/mahmoudimus/cookiecutter-slim-berkshelf-vagrant",
+    "description": "A sane berks cookbook command using cookiecutter for berkshelf and vagrant"
+  },
+  {
+    "name": "svetlyak40wt/cookiecutter-cl-project",
+    "star": 0,
+    "updated_at": "2013-10-15T11:14:37Z",
+    "created_at": "2013-10-15T07:37:53Z",
+    "url": "https://github.com/svetlyak40wt/cookiecutter-cl-project",
+    "description": "A boilerplate Common Lisp project's template."
+  },
+  {
+    "name": "audreyr/cookiecutter-complexity",
+    "star": 2,
+    "updated_at": "2014-07-31T06:45:28Z",
+    "created_at": "2013-08-16T22:07:12Z",
+    "url": "https://github.com/audreyr/cookiecutter-complexity",
+    "description": "Cookiecutter template for a Complexity site. See https://github.com/audreyr/cookiecutter and https://github.com/audreyr/complexity."
+  },
+  {
+    "name": "selimb/cookiecutter-latex-article",
+    "star": 3,
+    "updated_at": "2015-07-13T01:55:36Z",
+    "created_at": "2015-02-25T09:03:42Z",
+    "url": "https://github.com/selimb/cookiecutter-latex-article",
+    "description": "Cookiecutter template for LaTeX article."
+  },
+  {
+    "name": "larsyencken/pandoc-talk",
+    "star": 12,
+    "updated_at": "2015-05-14T03:06:59Z",
+    "created_at": "2013-09-02T05:57:39Z",
+    "url": "https://github.com/larsyencken/pandoc-talk",
+    "description": "A cookiecutter template for pandoc / XeTeX talks."
+  },
+  {
+    "name": "audreyr/cookiecutter-jswidget",
+    "star": 2,
+    "updated_at": "2015-11-22T02:48:29Z",
+    "created_at": "2013-09-04T21:57:18Z",
+    "url": "https://github.com/audreyr/cookiecutter-jswidget",
+    "description": "Cookiecutter for a generic JS front-end widget. Imagine a jQuery plugin without the jQuery dependency."
+  },
+  {
+    "name": "sloria/cookiecutter-docopt",
+    "star": 13,
+    "updated_at": "2016-01-07T08:19:27Z",
+    "created_at": "2013-09-05T22:53:45Z",
+    "url": "https://github.com/sloria/cookiecutter-docopt",
+    "description": "A Python command-line script template that uses docopt for arguments parsing"
+  },
+  {
+    "name": "christabor/cookiecutter-tampermonkey",
+    "star": 0,
+    "updated_at": "2015-09-17T20:48:03Z",
+    "created_at": "2015-09-17T20:36:16Z",
+    "url": "https://github.com/christabor/cookiecutter-tampermonkey",
+    "description": "A cookiecutter template for creating TamperMonkey JavaScript plugins"
+  },
+  {
+    "name": "audreyr/cookiecutter-component",
+    "star": 0,
+    "updated_at": "2014-04-23T16:53:20Z",
+    "created_at": "2013-08-21T22:46:37Z",
+    "url": "https://github.com/audreyr/cookiecutter-component",
+    "description": "Cookiecutter template for a Component package."
+  },
+  {
+    "name": "openstack-dev/cookiecutter",
+    "star": 49,
+    "updated_at": "2015-12-16T13:05:27Z",
+    "created_at": "2013-09-09T17:10:26Z",
+    "url": "https://github.com/openstack-dev/cookiecutter",
+    "description": "Cookiecutter Template for new OpenStack projects"
+  },
+  {
+    "name": "Paspartout/BoilerplatePP",
+    "star": 10,
+    "updated_at": "2016-01-04T08:48:31Z",
+    "created_at": "2013-11-30T22:28:50Z",
+    "url": "https://github.com/Paspartout/BoilerplatePP",
+    "description": "Boilerplate for your C++ projects"
+  },
+  {
+    "name": "vincentbernat/bootstrap.c",
+    "star": 38,
+    "updated_at": "2015-12-30T15:48:33Z",
+    "created_at": "2013-02-07T21:34:54Z",
+    "url": "https://github.com/vincentbernat/bootstrap.c",
+    "description": "Boilerplate for small C projects (autotools)"
+  },
+  {
+    "name": "iknite/cookiecutter-ansible-role",
+    "star": 21,
+    "updated_at": "2015-10-14T03:07:18Z",
+    "created_at": "2014-06-12T08:48:32Z",
+    "url": "https://github.com/iknite/cookiecutter-ansible-role",
+    "description": "Cookie cutter recipe to easily create ansible roles."
+  },
+  {
+    "name": "kragniz/cookiecutter-pypackage-minimal",
+    "star": 12,
+    "updated_at": "2015-12-24T16:14:58Z",
+    "created_at": "2014-03-06T11:50:40Z",
+    "url": "https://github.com/kragniz/cookiecutter-pypackage-minimal",
+    "description": "A minimal template for python packages"
+  },
+  {
+    "name": "hackebrot/cookiedozer",
+    "star": 10,
+    "updated_at": "2015-12-16T23:55:55Z",
+    "created_at": "2014-12-28T12:56:56Z",
+    "url": "https://github.com/hackebrot/cookiedozer",
+    "description": ":iphone: Cookiecutter for i18n Kivy Apps"
+  },
+  {
+    "name": "hackebrot/cookiecutter-kivy",
+    "star": 15,
+    "updated_at": "2015-12-16T23:54:53Z",
+    "created_at": "2014-04-19T11:02:56Z",
+    "url": "https://github.com/hackebrot/cookiecutter-kivy",
+    "description": ":video_game: Minimal Cookiecutter for Python Kivy Apps"
+  },
+  {
+    "name": "pbacterio/cookiecutter-django-paas",
+    "star": 14,
+    "updated_at": "2015-10-13T17:13:49Z",
+    "created_at": "2014-02-12T10:38:43Z",
+    "url": "https://github.com/pbacterio/cookiecutter-django-paas",
+    "description": "Django template ready to use in PAAS platforms like Heroku, OpenShift, etc..."
+  },
+  {
+    "name": "lborgav/cookiecutter-django",
+    "star": 4,
+    "updated_at": "2014-08-20T10:56:09Z",
+    "created_at": "2013-11-12T20:20:30Z",
+    "url": "https://github.com/lborgav/cookiecutter-django",
+    "description": "My reusable Django template"
+  },
+  {
+    "name": "quokkaproject/cookiecutter-quokka-module",
+    "star": 3,
+    "updated_at": "2015-07-15T13:48:52Z",
+    "created_at": "2013-10-14T23:05:36Z",
+    "url": "https://github.com/quokkaproject/cookiecutter-quokka-module",
+    "description": "Cookiecutter template for a Quokka module. See https://github.com/audreyr/cookiecutter."
+  },
+  {
+    "name": "wildfish/cookiecutter-django-crud",
+    "star": 44,
+    "updated_at": "2015-11-27T06:40:51Z",
+    "created_at": "2013-09-20T17:11:23Z",
+    "url": "https://github.com/wildfish/cookiecutter-django-crud",
+    "description": "A cookiecutter template to create a Django app around a model with CRUD views using django-vanilla-views, a floppyforms ModelForm and WebTest tests using model mommy."
+  },
+  {
+    "name": "palazzem/cookiecutter-django-cms",
+    "star": 13,
+    "updated_at": "2015-03-24T03:32:20Z",
+    "created_at": "2013-09-04T19:59:16Z",
+    "url": "https://github.com/palazzem/cookiecutter-django-cms",
+    "description": "Simple cookiecutter template to be up and running quickly with your Django CMS project!"
+  },
+  {
+    "name": "pydanny/cookiecutter-djangopackage",
+    "star": 124,
+    "updated_at": "2015-12-29T13:36:27Z",
+    "created_at": "2013-08-12T12:28:50Z",
+    "url": "https://github.com/pydanny/cookiecutter-djangopackage",
+    "description": "A cookiecutter template for creating reusable Django packages quickly. "
+  },
+  {
+    "name": "pydanny/cookiecutter-django",
+    "star": 1175,
+    "updated_at": "2016-01-09T22:08:55Z",
+    "created_at": "2013-08-14T17:43:31Z",
+    "url": "https://github.com/pydanny/cookiecutter-django",
+    "description": "A Cookiecutter template for creating production-ready Django projects quickly."
+  },
+  {
+    "name": "marcofucci/cookiecutter-simple-django",
+    "star": 39,
+    "updated_at": "2016-01-05T03:01:24Z",
+    "created_at": "2013-09-29T09:12:58Z",
+    "url": "https://github.com/marcofucci/cookiecutter-simple-django",
+    "description": "A cookiecutter template for creating reusable Django projects quickly."
+  },
+  {
+    "name": "wdm0006/cookiecutter-flask",
+    "star": 18,
+    "updated_at": "2016-01-09T19:46:54Z",
+    "created_at": "2015-09-28T01:23:41Z",
+    "url": "https://github.com/wdm0006/cookiecutter-flask",
+    "description": "A flask template with Bootstrap 3, asset bundling+minification, starter templates, and registration/authentication. For use with cookiecutter."
+  },
+  {
+    "name": "wdm0006/cookiecutter-pipproject",
+    "star": 2,
+    "updated_at": "2015-11-05T23:32:07Z",
+    "created_at": "2015-10-27T01:46:06Z",
+    "url": "https://github.com/wdm0006/cookiecutter-pipproject",
+    "description": "A(nother) cookiecutter template for pip-installable python projects"
+  },
+  {
+    "name": "avelino/cookiecutter-bottle",
+    "star": 17,
+    "updated_at": "2015-12-05T10:22:13Z",
+    "created_at": "2015-01-20T21:09:31Z",
+    "url": "https://github.com/avelino/cookiecutter-bottle",
+    "description": "A cookiecutter template for creating reusable Bottle projects quickly."
+  },
+  {
+    "name": "JackStouffer/cookiecutter-Flask-Foundation",
+    "star": 20,
+    "updated_at": "2015-12-30T03:32:30Z",
+    "created_at": "2015-03-19T21:59:49Z",
+    "url": "https://github.com/JackStouffer/cookiecutter-Flask-Foundation",
+    "description": "Cookiecutter fork of Flask Foundation"
+  },
+  {
+    "name": "sloria/cookiecutter-flask",
+    "star": 757,
+    "updated_at": "2016-01-08T15:30:37Z",
+    "created_at": "2013-08-16T07:27:55Z",
+    "url": "https://github.com/sloria/cookiecutter-flask",
+    "description": "A flask template with Bootstrap 3, asset bundling+minification, starter templates, and registration/authentication. For use with cookiecutter."
+  },
+  {
+    "name": "audreyr/cookiecutter-jquery",
+    "star": 8,
+    "updated_at": "2015-09-17T21:02:27Z",
+    "created_at": "2013-08-07T14:46:43Z",
+    "url": "https://github.com/audreyr/cookiecutter-jquery",
+    "description": "Cookiecutter template for a jQuery plugin. Based on https://github.com/jquery-boilerplate/jquery-boilerplate"
+  },
+  {
+    "name": "flyondrag/cookiecutter-python",
+    "star": 2,
+    "updated_at": "2016-01-03T05:45:15Z",
+    "created_at": "2015-09-24T09:05:43Z",
+    "url": "https://github.com/flyondrag/cookiecutter-python",
+    "description": "Python's package skeleton."
+  },
+  {
+    "name": "audreyr/cookiecutter-pypackage",
+    "star": 555,
+    "updated_at": "2016-01-08T22:53:23Z",
+    "created_at": "2013-07-14T18:52:05Z",
+    "url": "https://github.com/audreyr/cookiecutter-pypackage",
+    "description": "Cookiecutter template for a Python package."
+  },
+  {
+    "name": "thomaslee/cookiecutter-kotlin-gradle",
+    "star": 0,
+    "updated_at": "2015-12-28T00:01:53Z",
+    "created_at": "2015-12-28T00:01:23Z",
+    "url": "https://github.com/thomaslee/cookiecutter-kotlin-gradle",
+    "description": "Generate an (almost) bare-bones Kotlin project using audreyr/cookiecutter"
+  },
+  {
+    "name": "agconti/cookiecutter-es6-boilerplate",
+    "star": 5,
+    "updated_at": "2015-12-31T10:21:41Z",
+    "created_at": "2015-09-11T20:36:35Z",
+    "url": "https://github.com/agconti/cookiecutter-es6-boilerplate",
+    "description": "A cookiecutter for bleeding edge front end projects. "
+  },
+  {
+    "name": "agconti/cookiecutter-django-rest",
+    "star": 49,
+    "updated_at": "2016-01-08T02:44:50Z",
+    "created_at": "2015-06-04T16:46:49Z",
+    "url": "https://github.com/agconti/cookiecutter-django-rest",
+    "description": "For creating REST apis for mobile and web applications."
+  }
+]
