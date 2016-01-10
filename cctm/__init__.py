@@ -76,17 +76,17 @@ def install(config, name, upgrade=False, tag=None):
         installer.install(data, upgrade=upgrade, tag=tag)
 
 
-def use(config, name, retry=True):
+def use(config, name, retry=True, overwrite_if_exists=False):
     config.load_config()
     lookup = services.InstalledPackageLookup(config)
     data = lookup.lookup_loose(name)
     if data:
         from cookiecutter.main import cookiecutter
         extra_context = config.settings.get("extra_context") or {}
-        cookiecutter(data["path"], extra_context=extra_context)
+        cookiecutter(data["path"], extra_context=extra_context, overwrite_if_exists=overwrite_if_exists)
     elif retry:
         install(config, name)
-        use(config, name, retry=False)
+        use(config, name, retry=False, overwrite_if_exists=overwrite_if_exists)
 
 
 def selfupdate(config):
@@ -105,7 +105,7 @@ def modify_config(config, name=None, value=None):
     if not name:
         print(json.dumps(config.settings))
     else:
-        target = config.settings
+        target = config.settings["extra_context"]
         key_list = name.split(".")
         for k in key_list[:-1]:
             target = target[k]
