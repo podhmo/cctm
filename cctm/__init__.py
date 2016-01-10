@@ -46,14 +46,18 @@ def init(config, project=None):
         config.save_config(default_config, config.config_path)
 
 
-def show(config, name):
+def show(config, name, tags=False):
     config.load_config()
     lookup = services.PackageLookup(config)
     data = lookup.lookup_loose(name) or "not found."
     print(json.dumps(data))
+    if tags:
+        # TODO: move
+        import subprocess
+        subprocess.call(["git", "ls-remote", "--tags", data["url"]])
 
 
-def install(config, name, upgrade=False):
+def install(config, name, upgrade=False, tag=None):
     config.load_config()
     lookup = services.PackageLookup(config)
     data = lookup.lookup_loose(name)
@@ -61,7 +65,7 @@ def install(config, name, upgrade=False):
         print("not found: {}".format(name))
     else:
         installer = services.TemplateInstaller(config)
-        installer.install(data, upgrade=upgrade)
+        installer.install(data, upgrade=upgrade, tag=tag)
 
 
 def use(config, name, retry=True):
@@ -98,6 +102,7 @@ def main(argv=None):
     config.register_command("use", use)
     config.register_command("selfupdate", selfupdate)
     config.include("cctm.management.fetching")
+    config.include("cctm.management.alias")
     config.include("cctm.management.merging")
     config.include("cctm.management.listing")
     config.include("cctm.management.removing")
