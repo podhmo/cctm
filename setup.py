@@ -60,6 +60,5 @@ setup(name='cctm',
       license="mit",
       entry_points="""
 [console_scripts]
-cctm = cctm.commands:main
+cctm = cctm:main
 """)
-
