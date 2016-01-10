@@ -1,6 +1,9 @@
 # -*- coding:utf-8 -*-
 import logging
+import sys
 import os.path
+import getpass
+from collections import OrderedDict
 from cctm import services
 from cctm import json
 from cctm.config import Configurator
@@ -32,17 +35,20 @@ def init(config, project=None):
     if os.path.exists(config.config_path):
         print("already exists. {}".format(config.config_path))
     else:
-        default_config = {
-            "base_path": config.base_path,
-            "store_dir": config.store_dir,
-            "repositories": [
-                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json",
-                "file://{}".format(os.path.join(config.base_path, "local.repository.json"))
-            ],
-            "aliases": [
-                "https://raw.githubusercontent.com/podhmo/cctm/master/data/alias.json",
-                "file://{}".format(os.path.join(config.base_path, "local.alias.json"))
-            ]
+        default_config = OrderedDict()
+        default_config["base_path"] = config.base_path
+        default_config["store_dir"] = config.store_dir
+        default_config["repositories"] = [
+            "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json",
+            "file://{}".format(os.path.join(config.base_path, "local.repository.json"))
+        ]
+        default_config["aliases"] = [
+            "https://raw.githubusercontent.com/podhmo/cctm/master/data/alias.json",
+            "file://{}".format(os.path.join(config.base_path, "local.alias.json"))
+        ]
+        default_config["extra_context"] = {
+            "name": getpass.getuser(),
+            "author_name": getpass.getuser()
         }
         logger.info("initialize. generating %s", os.path.abspath(config.config_path))
         config.save_config(default_config, config.config_path)
@@ -76,7 +82,8 @@ def use(config, name, retry=True):
     data = lookup.lookup_loose(name)
     if data:
         from cookiecutter.main import cookiecutter
-        cookiecutter(data["path"])
+        extra_context = config.settings.get("extra_context") or {}
+        cookiecutter(data["path"], extra_context=extra_context)
     elif retry:
         install(config, name)
         use(config, name, retry=False)
@@ -93,6 +100,25 @@ def selfupdate(config):
     alias_store.save(repository_store.extract_packages(config.aliases))
 
 
+def modify_config(config, name=None, value=None):
+    config.load_config()
+    if not name:
+        print(json.dumps(config.settings))
+    else:
+        target = config.settings
+        key_list = name.split(".")
+        for k in key_list[:-1]:
+            target = target[k]
+        if value is None:
+            target.pop(key_list[-1], None)
+            config.save_config(config.settings)
+            sys.stderr.write("pop: {}\n".format(name))
+        else:
+            target[key_list[-1]] = value
+            config.save_config(config.settings)
+            sys.stderr.write("set: {} = {}\n".format(name, value))
+
+
 def main(argv=None):
     config = get_configurator()
     logging.basicConfig(level=logging.INFO)
@@ -103,6 +129,7 @@ def main(argv=None):
     config.register_command("install", install)
     config.register_command("use", use)
     config.register_command("selfupdate", selfupdate)
+    config.register_command("config", modify_config)
     config.include("cctm.management.fetching")
     config.include("cctm.management.alias")
     config.include("cctm.management.merging")
