@@ -7,7 +7,7 @@ def main(config, installed=False):
     config.load_config()
     if installed:
         for path in safe_listdir(config.template_dir):
-            print(path.replace(".", "-", 1))
+            print(path.replace(".", "/", 1))
     else:
         store = services.PackagesStore(config)
 
