@@ -2,6 +2,7 @@
 import os.path
 import requests
 from cctm import json
+from cctm.path import safe_open
 
 
 class Resolver(object):
@@ -24,8 +25,14 @@ class Asset(object):
 
 class File(Asset):
     def json(self):
-        with open(self.path) as rf:
-            return json.load(rf)
+        try:
+            with open(self.path) as rf:
+                return json.load(rf)
+        except FileNotFoundError:
+            data = []
+            with safe_open(self.path, "w") as wf:
+                json.dump(data, wf)
+            return data
 
 
 class URL(Asset):

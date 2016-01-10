@@ -32,11 +32,11 @@ class CCTMControl(Control):
 
     @reify
     def alias_path(self):
-        return self.resolve_path("alias.json")
+        return self.resolve_path("store.alias.json")
 
     @reify
     def store_path(self):
-        return self.resolve_path("store.json")
+        return self.resolve_path("store.packages.json")
 
     @reify
     def template_dir(self):

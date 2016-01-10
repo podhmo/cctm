@@ -19,10 +19,10 @@ class FileStore(object):
         except FileNotFoundError:
             return []
 
-    def update(self, package_data, exists_data=None):
+    def update(self, data, exists_data=None):
         exists_data = exists_data or self.load()
-        store_data = [package_data]
-        store_data.extend(self.remove(package_data["name"], exists_data))
+        store_data = [data]
+        store_data.extend(self.remove(data["name"], exists_data))
         return store_data
 
     def remove(self, name, exists_data=None):

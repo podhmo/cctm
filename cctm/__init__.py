@@ -36,10 +36,12 @@ def init(config, project=None):
             "base_path": config.base_path,
             "template_dir": config.template_dir,
             "repositories": [
-                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
+                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json",
+                "file://{}".format(os.path.join(config.base_path, "local.repository.json"))
             ],
             "aliases": [
-                "https://raw.githubusercontent.com/podhmo/cctm/master/data/alias.json"
+                "https://raw.githubusercontent.com/podhmo/cctm/master/data/alias.json",
+                "file://{}".format(os.path.join(config.base_path, "local.alias.json"))
             ]
         }
         logger.info("initialize. generating %s", os.path.abspath(config.config_path))

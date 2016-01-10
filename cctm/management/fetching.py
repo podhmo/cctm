@@ -26,9 +26,13 @@ def main(config, repository, show_all=False, save=False, store=None):
     if not save:
         print(json.dumps(data))
     else:
-        store = services.packages_store(config, path=store)
-        store_data = store.update(data, store.load())
-        store.save(store_data)
+        package_store = services.packages_store(config, path=store)
+        store_data = package_store.update(data, package_store.load())
+        package_store.save(store_data)
+        if store is None:
+            local_store = services.packages_store(config, path=config.control.resolve_path("local.repository.json"))
+            store_data = local_store.update(data, local_store.load())
+            local_store.save(store_data)
 
 
 def includeme(config):

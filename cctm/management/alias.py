@@ -9,9 +9,16 @@ def main(config, name, alias, store=None):
     data = lookup.lookup_loose(name)
     if not data:
         sys.stderr.write("{} is not found".format(name))
-    store = services.aliases_store(config, path=store)
-    store_data = store.update({"name": alias, "link": name}, store.load())
-    data = store.save(store_data)
+    alias_store = services.aliases_store(config, path=store)
+
+    data = {"name": alias, "link": name}
+    store_data = alias_store.update(data, alias_store.load())
+    alias_store.save(store_data)
+
+    if store is None:
+        local_store = services.aliases_store(config, path=config.control.resolve_path("local.alias.json"))
+        store_data = local_store.update(data, local_store.load())
+        local_store.save(store_data)
 
 
 def includeme(config):
