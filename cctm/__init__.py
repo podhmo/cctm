@@ -36,7 +36,8 @@ def init(config, project=None):
             "base_path": config.base_path,
             "template_dir": config.template_dir,
             "repositories": [
-                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
+                "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.simple.json"
+                # "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
             ]
         }
         logger.info("initialize. generating %s", os.path.abspath(config.config_path))

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ionelmc/cookiecutter-pylibrary",
+    "star": 137,
+    "updated_at": "2016-01-09T03:12:56Z",
+    "created_at": "2014-05-28T14:14:29Z",
+    "url": "https://github.com/ionelmc/cookiecutter-pylibrary",
+    "description": "Enhanced cookiecutter template for Python libraries."
+  },
+  {
+    "name": "audreyr/cookiecutter-pypackage",
+    "star": 555,
+    "updated_at": "2016-01-08T22:53:23Z",
+    "created_at": "2013-07-14T18:52:05Z",
+    "url": "https://github.com/audreyr/cookiecutter-pypackage",
+    "description": "Cookiecutter template for a Python package."
+  },
+  {
+    "name": "kragniz/cookiecutter-pypackage-minimal",
+    "star": 12,
+    "updated_at": "2015-12-24T16:14:58Z",
+    "created_at": "2014-03-06T11:50:40Z",
+    "url": "https://github.com/kragniz/cookiecutter-pypackage-minimal",
+    "description": "A minimal template for python packages"
+  }
+]
