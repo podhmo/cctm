@@ -138,7 +138,7 @@ if you want to set a default context, using `cctm config`
   }
   # edit configuration
   $ cctm config --name=project_name --value=hello
-  $ delete configuration
+  # delete configuration
   $ cctm config --name=project_name
 
 extra_context attribute in config file is using as cookiecutter's extra context, so.
