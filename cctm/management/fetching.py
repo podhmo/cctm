@@ -41,6 +41,7 @@ class GithubSummaryRemapper(Remapper):
 
 
 def main(config, repository, show_all=False, save=False, store=None):
+    config.load_config()
     full_name = get_fullname(repository)
     url = Namespace(full_name).summary_url
     logger.info("fetching url=%s", url)

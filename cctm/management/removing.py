@@ -5,6 +5,7 @@ logger = logging.getLogger(__name__)
 
 
 def main(config, name):
+    config.load_config()
     store = services.PackagesStore(config)
     store_data = store.load()
     new_data = store.remove(name, store_data)

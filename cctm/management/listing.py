@@ -3,9 +3,15 @@ from cctm import services
 
 
 def main(config):
+    config.load_config()
     store = services.PackagesStore(config)
-    for data in store.load():
-        print("{data[name]}({data[star]}) -- {data[description]}".format(data=data))
+
+    def gen():
+        for data in store.load():
+            yield ("{data[name]}({data[star]}) -- {data[description]:.60}".format(data=data))
+
+    for line in sorted(gen()):
+        print(line)
 
 
 def includeme(config):

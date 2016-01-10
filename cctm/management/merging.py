@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 def main(config, url=None, save=False):
+    config.load_config()
     package_store = services.DumpOrSaveWrapper(services.PackagesStore(config), save=save)
     repository_store = services.RepositoriesStore(config)
     new_repositories = [url] if url else []

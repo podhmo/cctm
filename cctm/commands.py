@@ -22,6 +22,7 @@ def init(config):
 
 
 def selfupdate(config):
+    config.load_config()
     logger.info("selfupdate")
     logger.info("updating store=%s", config.store_path)
     package_store = services.PackagesStore(config)

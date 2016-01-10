@@ -50,7 +50,8 @@ def load_config(config, path=None):
         config.init_config(path=path)
 
     with open(path) as rf:
-        return json.load(rf)
+        config.settings = config.control.settings = settings = json.load(rf)  # xxx
+        return settings
 
 
 def save_config(config, settings, path=None):
@@ -63,7 +64,9 @@ def init_config(config, path=None):
     path = path or config.config_path
     default_config = {
         "base_path": config.base_path,
-        "repositories": []
+        "repositories": [
+            "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
+        ]
     }
     config.save_config(default_config, path=path)
 
