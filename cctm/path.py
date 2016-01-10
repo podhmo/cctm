@@ -23,3 +23,9 @@ def safe_open(path, *args, **kwargs):
 
     with open(path, *args, **kwargs) as ref:
         yield ref
+
+
+def safe_listdir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+    return os.listdir(path)

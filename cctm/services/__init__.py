@@ -2,6 +2,8 @@ from cctm import json
 from .store import PackagesStore
 from .store import RepositoriesStore
 from .resolver import Resolver
+from .lookup import PackageLookup, InstalledPackageLookup
+from .installer import TemplateInstaller
 
 
 class DumpOrSaveWrapper(object):

@@ -33,30 +33,6 @@ class PackagesStore(object):
         with open(self.path, "w") as wf:
             json.dump(store_data, wf)
 
-    def lookup_loose(self, name, exists_data=None):
-        exists_data = exists_data or self.load()
-        name = normalize(name)
-        for d in exists_data:
-            package_name = normalize(name)
-            if package_name == name:
-                return d
-            try:
-                if package_name.split("/")[1] == name:
-                    return d
-            except IndexError:
-                pass
-
-    def lookup(self, name, exists_data=None, loose=False):
-        exists_data = exists_data or self.load()
-        for d in exists_data:
-            package_name = d["name"]
-            if package_name == name:
-                return d
-
-
-def normalize(name):
-    return name.lower().replace("_", "").replace("-", "")
-
 
 class RepositoriesStore(object):
     def __init__(self, config):

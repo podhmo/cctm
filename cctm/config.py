@@ -32,6 +32,10 @@ class CCTMControl(Control):
         return self.resolve_path("store.json")
 
     @reify
+    def template_dir(self):
+        return self.resolve_path("templates")
+
+    @reify
     def repositories(self):
         return self.settings.get("repositories") or []
 
@@ -64,6 +68,7 @@ def init_config(config, path=None):
     path = path or config.config_path
     default_config = {
         "base_path": config.base_path,
+        "template_dir": config.template_dir,
         "repositories": [
             "https://raw.githubusercontent.com/podhmo/cctm/master/data/cookiecutter.index.json"
         ]

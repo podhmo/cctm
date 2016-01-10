@@ -24,9 +24,32 @@ def init(config):
 
 def show(config, name):
     config.load_config()
-    store = services.PackagesStore(config)
-    data = store.lookup_loose(name) or "not found."
+    lookup = services.PackageLookup(config)
+    data = lookup.lookup_loose(name) or "not found."
     print(json.dumps(data))
+
+
+def install(config, name):
+    config.load_config()
+    lookup = services.PackageLookup(config)
+    data = lookup.lookup_loose(name)
+    if data is None:
+        print("not found: {}".format(name))
+    else:
+        installer = services.TemplateInstaller(config)
+        installer.install(data)
+
+
+def use(config, name, retry=True):
+    config.load_config()
+    lookup = services.InstalledPackageLookup(config)
+    data = lookup.lookup_loose(name)
+    if data:
+        from cookiecutter.main import cookiecutter
+        cookiecutter(data["path"])
+    elif retry:
+        install(config, name)
+        use(config, name, retry=False)
 
 
 def selfupdate(config):
@@ -45,6 +68,8 @@ def main(argv=None):
 
     config.register_command("init", init)
     config.register_command("show", show)
+    config.register_command("install", install)
+    config.register_command("use", use)
     config.register_command("selfupdate", selfupdate)
     config.include("cctm.management.fetching")
     config.include("cctm.management.merging")

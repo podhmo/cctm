@@ -21,7 +21,8 @@ install_requires = [
     'miniconfig',
     'miniconfig-argparse',
     'cached_property',
-    'requests'
+    'requests',
+    'cookiecutter'
 ]
 
 
